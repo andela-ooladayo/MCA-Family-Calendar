@@ -1,92 +1,53 @@
-html, body {
-  margin: 0;
-  height: 100%;
-  font-family: Avenir !important;
-  background-image: url("../bg-minimal.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 642px;
-  background-position: center;
-  overflow: hidden;
-}
-.calender {
-  margin: 22rem auto;
-  width: 20rem; height: 2rem;
-  padding: 1rem;
-  border-radius: 3rem;
-  /*background: #404476;*/
-  font-size: 0;
-}
-.day, .week, .month {
-  /*font-family: 'Arimo', sans-serif;*/
-  font-family: Avenir !important;
-  cursor: pointer;
-  font-size: 1.0rem;
-  line-height: 3rem;
-  color: black;
-  text-align: center;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 2.8rem; height: 2.8rem;
-  border: 1px solid;
-  border-color: rgba(255,255,255,0);
-  border-radius: 50%;
-  /*-webkit-border-top-left-radius: 200px;
-  -webkit-border-top-right-radius: 200px;
-  -webkit-border-bottom-right-radius: 200px;
-  -webkit-border-bottom-left-radius: 200px;*/
-  transition: 200ms ease-in-out;
-}
-.week {
-  cursor: default;
-  color: black;
-  font-size: 1.2rem;
-  font-weight: bold;
-  line-height: 140px;
-}
-.month {
-  width: 100%;
-}
-.day:hover {
-/*  border-color: rgba(255,255,255,.2);
-  background: rgba(255,255,255,.1);*/
-  background: orange;
-}
-.bday {
-  font-family: Avenir !important;
-  cursor: pointer;
-  font-size: 1.0rem;
-  line-height: 3rem;
-  color: black;
-  text-align: center;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 2.8rem; height: 2.8rem;
-  /*border: 1px solid;*/
-  /*border-color: rgba(255,255,255,0);*/
-  /*border-radius: 50%;*/
-  transition: 200ms ease-in-out;
-  background: url('../hover.png');
-  background-size: 43px;
-  background-repeat: no-repeat;
 
-}
+* {
+      box-sizing: border-box;
+    }
+    *:before, *:after {
+      box-sizing: inherit;
+    }
 
-.daysnottocount {
-  font-family: 'Arimo', sans-serif;
-  font-size: 1.2rem;
-  line-height: rem;
-  color: black;
-  text-align: center;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 2.8rem; height: 2.8rem;
-  border: 1px solid;
-  border-color: rgba(255,255,255,0);
-  /*border-radius: 50%;*/
-  -webkit-border-top-left-radius: 200px;
-  -webkit-border-top-right-radius: 200px;
-  -webkit-border-bottom-right-radius: 200px;
-  -webkit-border-bottom-left-radius: 200px;
-  transition: 200ms ease-in-out;
-}
+    .calendar-container {
+      width: 600px;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .calendar {
+      border-bottom: 1px solid rgba(0, 0, 0, .5);
+      border-right: 1px solid rgba(0, 0, 0, .5);
+      width: 100%;
+    }
+    .day {
+      border-top: 1px solid rgba(0, 0, 0, .5);
+      border-left: 1px solid rgba(0, 0, 0, .5);
+
+      padding: 15px;
+
+      text-align: center;
+    }
+    .day.adj-month {
+      background-color: rgba(0, 0, 0, .1);
+      opacity: .5;
+    }
+
+    .calendar-item {
+      display: block;
+      height: 5px;
+
+    }
+
+    .calendar-control {
+      background-color: rgb(225, 225, 225);
+      border: 1px solid rgba(170, 170, 170, .7);
+      cursor: pointer;
+      display: inline-block;
+      padding: 4px 12px;
+    }
+
+    .calendar-control[data-calendar-control="prev"] {
+      float: left;
+    }
+    .calendar-control[data-calendar-control="next"] {
+      float: right;
+    }
